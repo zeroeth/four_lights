@@ -10,9 +10,14 @@
     .legislator_form
       = form_tag legislators_all_for_path, :method => :get do
         %label
-          Address
+          Street Address
           = text_field_tag :address
         = submit_tag 'Find Legislators'
   .grid_5
     %p.blue_info
       Enter your complete address to find out who represents you.
+  .clear
+  - if flash[:error]
+    .grid_5.prefix_1.suffix_6
+      .error_flash
+        = flash[:error]
