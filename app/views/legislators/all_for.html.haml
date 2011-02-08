@@ -24,9 +24,10 @@
         %dd
           = @legislators[type].twitter_id
 
-    .committees
-      %h2 Committees
-      %ul
-        - @legislators[type].committees.each do |committee|
-          %li
-            = committee.name
+    - if @legislators[type].committees.present?
+      .committees
+        %h2 Committees
+        %ul
+          - @legislators[type].committees.each do |committee|
+            %li
+              = committee.name
