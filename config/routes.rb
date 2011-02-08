@@ -3,6 +3,8 @@ FourLights::Application.routes.draw do
   get "legislators/all_for"
   get "legislators" => "legislators#index"
 
+  root :to => 'legislators#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
