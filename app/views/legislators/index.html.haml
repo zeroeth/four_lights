@@ -1,0 +1,6 @@
+= form_tag legislators_all_for_path, :method => :get do
+  .address_form
+    %label
+      Address
+      = text_field_tag :address
+    = submit_tag 'Find Legislators'

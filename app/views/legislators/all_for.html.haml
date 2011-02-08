@@ -1,0 +1,32 @@
+- [:senior_senator, :junior_senator, :representative].each do |type|
+  .legislator
+    %h1= type.to_s.titleize
+    %dl
+      %dt Name
+      %dd
+        = "#{@legislators[type].title}. #{@legislators[type].firstname} #{@legislators[type].lastname}"
+
+      %dt Party
+      %dd
+        = @legislators[type].party
+
+      %dt District
+      %dd
+        = @legislators[type].district
+
+      - if @legislators[type].website.present?
+        %dt Website
+        %dd
+          = @legislators[type].website
+
+      - if @legislators[type].twitter_id.present?
+        %dt Twitter
+        %dd
+          = @legislators[type].twitter_id
+
+    .committees
+      %h2 Committees
+      %ul
+        - @legislators[type].committees.each do |committee|
+          %li
+            = committee.name
