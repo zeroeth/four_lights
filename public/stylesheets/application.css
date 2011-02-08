@@ -1,0 +1,77 @@
+body {
+  background-color: #eeeeec;
+}
+
+.align_center {
+  text-align: center;
+}
+
+.banner {
+  font-size: 18px;
+  text-shadow: 0 -1px 0 #333;
+}
+
+.legislator {
+  margin-bottom: 20px;
+}
+
+.committees {
+  color: white;
+  background-color: #555753;
+  padding: 10px;
+}
+
+.party_I {
+  color: white;
+  background-color: #75507b;
+  padding: 10px;
+}
+
+.red_info,.party_R {
+  color: white;
+  background-color: #ef2929;
+  padding: 10px;
+}
+
+.blue_info,.party_D {
+  color: white;
+  background-color: #3465a4;
+  padding: 10px;
+}
+
+.legislator_form {
+  padding: 10px;
+}
+.footer {
+  color: white;
+  background-color: #2e3446;
+}
+
+
+dl.table-display
+{
+	float: left;
+	width: 400px;
+	margin: 0 10px;
+	padding: 0;
+}
+
+.table-display dt
+{
+	clear: left;
+	float: left;
+	width: 80px;
+	margin: 0;
+	padding: 5px;
+	border-top: 1px dotted #999;
+	font-weight: bold;
+}
+
+.table-display dd
+{
+	float: left;
+	width: 300px;
+	margin: 0;
+	padding: 5px;
+	border-top: 1px dotted #999;
+}

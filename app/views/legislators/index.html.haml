@@ -1,6 +1,18 @@
-= form_tag legislators_all_for_path, :method => :get do
-  .address_form
-    %label
-      Address
-      = text_field_tag :address
-    = submit_tag 'Find Legislators'
+.container_12
+  .grid_12.align_center
+    %h1 FOUR LIGHTS
+  %hr
+  .grid_12
+    %p.red_info.banner
+      This is a small application to get to know the Sunlight Labs API for looking up Representatives, and Senators. "There are four lights!" is the line Captain Picard yells to his political captors in the famous Star Trek episode 'Chain of Command'
+  .clear
+  .grid_7
+    .legislator_form
+      = form_tag legislators_all_for_path, :method => :get do
+        %label
+          Address
+          = text_field_tag :address
+        = submit_tag 'Find Legislators'
+  .grid_5
+    %p.blue_info
+      Enter your complete address to find out who represents you.

@@ -1,33 +1,43 @@
-- [:senior_senator, :junior_senator, :representative].each do |type|
-  .legislator
-    %h1= type.to_s.titleize
-    %dl
-      %dt Name
-      %dd
-        = "#{@legislators[type].title}. #{@legislators[type].firstname} #{@legislators[type].lastname}"
+.container_12
+  .grid_12.align_center
+    %h1 FOUR LIGHTS
+  %hr
 
-      %dt Party
-      %dd
-        = @legislators[type].party
+  - [:senior_senator, :junior_senator, :representative].each do |type|
+    - legislator = @legislators[type]
+    .grid_6
+      .legislator{:class => party_class_for(legislator)}
+        %h1= type.to_s.titleize
+        %dl.table-display
+          %dt Name
+          %dd
+            = "#{legislator.title}. #{legislator.firstname} #{legislator.lastname}"
 
-      %dt District
-      %dd
-        = @legislators[type].district
+          %dt Party
+          %dd
+            = legislator.party
 
-      - if @legislators[type].website.present?
-        %dt Website
-        %dd
-          = @legislators[type].website
+          %dt District
+          %dd
+            = legislator.district
 
-      - if @legislators[type].twitter_id.present?
-        %dt Twitter
-        %dd
-          = @legislators[type].twitter_id
+          - if legislator.website.present?
+            %dt Website
+            %dd
+              = legislator.website
 
-    - if @legislators[type].committees.present?
-      .committees
-        %h2 Committees
-        %ul
-          - @legislators[type].committees.each do |committee|
-            %li
-              = committee.name
+          - if legislator.twitter_id.present?
+            %dt Twitter
+            %dd
+              = legislator.twitter_id
+        .clear
+
+    - if legislator.committees.present?
+      .grid_6
+        .committees
+          %h2 Committees
+          %ul
+            - legislator.committees.each do |committee|
+              %li
+                = committee.name
+    .clear
